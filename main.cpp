@@ -37,7 +37,7 @@ void* prodA(void* ptr)
     while(true)
     {
         usleep(rand()%1000000);
-	    int n = rand()%20-10;
+	    int n = rand();
 	    mutex.p();
         cout<<"PRODUCENT A W SEKCJI KRYTYCZNEJ\n";
     	if(suma >= MAX_SUM_PROD_A || bufor.size() >= MAX_BUFFER_SIZE)
@@ -70,7 +70,7 @@ void* prodB(void* ptr)
     while(true)
     {
         usleep(rand()%1000000);
-	    int n = rand()%20-10;
+	    int n = rand();
 	    mutex.p();
         cout<<"PRODUCENT B W SEKCJI KRYTYCZNEJ\n";
 	    if(bufor.size() >= MAX_BUFFER_SIZE)
